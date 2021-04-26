@@ -38,11 +38,11 @@ after_success:
       # secret_access_key: $aws_secret_key
    
  deploy: 
-   provider: elasticbeanstalk
    app: multi-docker
    bucket_name: elasticbeanstalk-ap-south-1-178298393559
    bucket_path: docker-multi
    env: multidocker-env
+   provider: elasticbeanstalk
    region: ap-south-1
    on: 
      branch: master
