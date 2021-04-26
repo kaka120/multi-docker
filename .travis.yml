@@ -24,3 +24,15 @@ after_success:
   - docker push testdocker1987/multi-nginx
   - docker push testdocker1987/multi-server
   - docker push testdocker1987/multi-worker
+  
+  deploy:
+  provider: elasticbeanstalk
+  region: 'ap-south-1' # Subdomain in the URLss
+  app: 'multi-docker'
+  env: 'Multidocker-env'
+  bucket_name: 'elasticbeanstalk-ap-south-1-178298393559'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
