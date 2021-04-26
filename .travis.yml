@@ -44,6 +44,6 @@ deploy:
   provider: elasticbeanstalk
   region: ap-south-1
   true: 
-    access_key_id: $AWS_ACCESS_KEY
+    aws_access_key: $AWS_ACCESS_KEY
     branch: master
-    secret_access_key: $AWS_SECRET_KEY
+    aws_secret_key: $AWS_SECRET_KEY
