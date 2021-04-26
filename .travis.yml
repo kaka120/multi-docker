@@ -25,26 +25,26 @@ after_success:
   - docker push testdocker1987/multi-server
   - docker push testdocker1987/multi-worker
   
-  deploy:
-    provider: elasticbeanstalk
-    region: 'ap-south-1'                  # subdomain in the urlss
-    app: 'multi-docker'
-    env: 'multidocker-env'
-    bucket_name: 'elasticbeanstalk-ap-south-1-178298393559'
-    bucket_path: 'docker-multi'
-   on:
-      branch: master
-      access_key_id: $aws_access_key
-      secret_access_key: $aws_secret_key
+  # deploy:
+    # provider: elasticbeanstalk
+    # region: 'ap-south-1'                  # subdomain in the urlss
+    # app: 'multi-docker'
+    # env: 'multidocker-env'
+    # bucket_name: 'elasticbeanstalk-ap-south-1-178298393559'
+    # bucket_path: 'docker-multi'
+   # on:
+      # branch: master
+      # access_key_id: $aws_access_key
+      # secret_access_key: $aws_secret_key
    
-# deploy: 
-  # app: multi-docker
-  # bucket_name: elasticbeanstalk-ap-south-1-178298393559
-  # bucket_path: docker-multi
-  # env: multidocker-env
-  # provider: elasticbeanstalk
-  # region: ap-south-1
-  # on: 
-    # branch: master
-    # access_key_id: $AWS_ACCESS_KEY
-    # secret_access_key: $AWS_SECRET_KEY
+ deploy: 
+   provider: elasticbeanstalk
+   app: multi-docker
+   bucket_name: elasticbeanstalk-ap-south-1-178298393559
+   bucket_path: docker-multi
+   env: multidocker-env
+   region: ap-south-1
+   on: 
+     branch: master
+     access_key_id: $AWS_ACCESS_KEY
+     secret_access_key: $AWS_SECRET_KEY
