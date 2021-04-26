@@ -43,7 +43,7 @@ deploy:
   env: multidocker-env
   provider: elasticbeanstalk
   region: ap-south-1
-  true: 
-    aws_access_key: $AWS_ACCESS_KEY
+  on: 
     branch: master
+    aws_access_key: $AWS_ACCESS_KEY
     aws_secret_key: $AWS_SECRET_KEY
