@@ -1,6 +1,9 @@
 sudo: required
 language: generic
 
+variables:
+   
+
 services:
   - docker
 
@@ -16,7 +19,7 @@ after_success:
   - docker build -t testdocker1987/multi-server ./server
   - docker build -t testdocker1987/multi-worker ./worker
 
-
+  # MainBranch:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
@@ -66,3 +69,4 @@ after_success:
 #   secret_access_key: $AWS_SECRET_KEY
 
 # Deployment related configuration data
+
